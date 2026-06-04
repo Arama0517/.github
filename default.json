@@ -8,7 +8,6 @@
     "mergeConfidence:age-confidence-badges",
     "replacements:all",
     "workarounds:all",
-    "helpers:forgejoDigestChangelogs",
     "helpers:githubDigestChangelogs",
     "abandonments:recommended",
     "helpers:pinGitHubActionDigestsToSemver"
@@ -38,17 +37,19 @@
 
   "automerge": true,
   "automergeSchedule": ["* * * * *"],
-  "automergeType": "branch",
+  "automergeType": "pr",
   "automergeStrategy": "rebase",
 
   "rangeStrategy": "pin",
   "pinDigests": true,
 
   "lockFileMaintenance": {
-    "enabled": true
+    "enabled": true,
+    "automerge": true
   },
 
   "vulnerabilityAlerts": {
-    "enabled": true
+    "enabled": true,
+    "automerge": true
   }
 }
