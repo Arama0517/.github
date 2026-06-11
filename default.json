@@ -21,6 +21,7 @@
   "separateMinorPatch": false,
 
   "minimumReleaseAge": "3 days",
+  "internalChecksFilter": "strict",
 
   "semanticCommits": "enabled",
   "rebaseWhen": "behind-base-branch",
@@ -29,13 +30,12 @@
   "commitHourlyLimit": 0,
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
-  "prCreation": "immediate",
+  "prCreation": "not-pending",
 
   "suppressNotifications": ["prEditedNotification"],
 
   "schedule": ["* * * * *"],
   "timezone": "Asia/Shanghai",
-  "updateNotScheduled": true,
 
   "automerge": true,
   "automergeSchedule": ["* * * * *"],
