@@ -20,6 +20,8 @@
   "separateMultipleMinor": false,
   "separateMinorPatch": false,
 
+  "minimumReleaseAge": "3 days",
+
   "semanticCommits": "enabled",
   "rebaseWhen": "behind-base-branch",
   "ignoreTests": true,
