@@ -20,9 +20,6 @@
   "separateMultipleMinor": false,
   "separateMinorPatch": false,
 
-  "minimumReleaseAge": "3 days",
-  "internalChecksFilter": "strict",
-
   "semanticCommits": "enabled",
   "rebaseWhen": "behind-base-branch",
   "ignoreTests": true,
@@ -30,7 +27,7 @@
   "commitHourlyLimit": 0,
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
-  "prCreation": "not-pending",
+  "prCreation": "immediate",
 
   "suppressNotifications": ["prEditedNotification"],
 
@@ -52,6 +49,7 @@
 
   "vulnerabilityAlerts": {
     "enabled": true,
-    "automerge": true
+    "automerge": true,
+    "vulnerabilityFixStrategy": "highest"
   }
 }
