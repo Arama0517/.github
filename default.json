@@ -44,12 +44,14 @@
 
   "lockFileMaintenance": {
     "enabled": true,
-    "automerge": true
+    "automerge": true,
+    "schedule": ["* * * * *"]
   },
 
   "vulnerabilityAlerts": {
     "enabled": true,
     "automerge": true,
+    "schedule": ["* * * * *"],
     "vulnerabilityFixStrategy": "highest"
   }
 }
