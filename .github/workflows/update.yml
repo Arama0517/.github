@@ -1,0 +1,59 @@
+name: Update subs
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    services:
+      subconverter:
+        image: asdlokj1qpi23/subconverter:latest@sha256:823afacc2a9a9387411c89bb555ae526cfdcf80d7305f3b48bec7f007c28a6b8
+        ports:
+          - 25500:25500
+    steps:
+      - name: Checkout
+        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+
+      - name: Restore history
+        uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        with:
+          path: output/history
+          key: none
+          restore-keys: |
+            history-
+
+      - name: Update subs
+        run: |
+          wget -q https://github.com/beck-8/subs-check/releases/latest/download/subs-check_Linux_x86_64.tar.gz -O ./subs-check.tar.gz
+          tar -xzf ./subs-check.tar.gz -C . subs-check
+          chmod +x ./subs-check
+          ./subs-check || true
+
+      - name: Save history
+        uses: actions/cache/save@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
+        with:
+          path: ${{ github.workspace }}/output/history
+          key: history-${{ github.run_id }}
+
+      - name: Init proxy branch
+        id: init
+        run: |
+          echo "commit_message=feat(bucket): auto update at $(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M')" >> $GITHUB_OUTPUT
+          mkdir -p ./results
+          mv ./results.json results/results.json
+
+      - name: Depoly to porxy branch
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: ${{ matrix.branch_name }}
+          publish_dir: ./results
+          user_name: "github-actions[bot]"
+          user_email: "41898282+github-actions[bot]@users.noreply.github.com"
+          full_commit_message: ${{ steps.init.outputs.commit_message }}
+          enable_jekyll: true
+          force_orphan: true
