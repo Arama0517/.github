@@ -14,7 +14,7 @@ media-concurrent: 32
 shuffle-test-order: true
 # 检查间隔(分钟)
 # 必须大于0，小于等于0会设置间隔1分钟
-check-interval: 114514
+check-interval: 100000
 # cron表达式，如果配置了此项，将忽略check-interval
 # 支持标准cron表达式，如：
 # "0 */2 * * *" 表示每2小时的整点执行
