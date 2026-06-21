@@ -21,9 +21,10 @@ jobs:
       - name: Restore history
         uses: actions/cache/restore@27d5ce7f107fe9357f9df03efb73ab90386fccae # v5.0.5
         with:
-          path: output/history
+          path: ${{ github.workspace }}/output/history
           key: history
-          restore-keys: history
+          restore-keys: |
+            history
 
       - name: Update subs
         run: |
