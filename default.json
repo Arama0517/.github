@@ -39,13 +39,13 @@
   "lockFileMaintenance": {
     "enabled": true,
     "automerge": true,
-    "schedule": ["0 0 * * *"]
+    "schedule": ["* 0 * * *"]
   },
 
   "vulnerabilityAlerts": {
     "enabled": true,
     "automerge": true,
-    "schedule": ["0 0 * * *"],
+    "schedule": ["* 0 * * *"],
     "vulnerabilityFixStrategy": "highest"
   }
 }
