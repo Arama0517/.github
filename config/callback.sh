@@ -1,3 +1,2 @@
 #!/bin/sh
-kill -TERM 1
-kill -TERM 1
+kill -9 $(ps | grep subs-check-pro | grep -v grep | awk '{print $1}')
