@@ -31,6 +31,7 @@ jobs:
         run: |
           mkdir -p output
           docker run --rm \
+            --init \
             -v ./config:/app/config \
             -v ./output:/app/output \
             ghcr.io/sinspired/subs-check-pro:latest || true
