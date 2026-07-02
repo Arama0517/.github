@@ -163,10 +163,10 @@ sub-process:
   sub-info: false # 注入订阅流量信息节点
 
   # true=保留匹配节点（白名单），false=丢弃匹配节点（黑名单）
-  regex-filter-keep: true
+  regex-filter-keep: false
   # 正则筛选表达式列表
   regex-filter:
-    # - ".*\bYT\b(?!-CN).*"
+    - "\\|(?:[5-9][0-9]|100)%"
 
   # 正则排序表达式列表，按照匹配顺序排序
   # 正则过滤，国家、协议过滤等操作，请进入 WebUI，点 “订阅管理”操作
