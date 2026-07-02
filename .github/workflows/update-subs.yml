@@ -1,0 +1,43 @@
+name: Update subs
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+
+      - name: Restore history
+        uses: actions/cache/restore@v6
+        with:
+          path: ${{ github.workspace }}/output/history
+          key: history
+          restore-keys: |
+            history
+
+      - name: Replace gist id and token
+        uses: mikefarah/yq@v4.53.3
+        with:
+          cmd: yq -i '."github-gist-id" = "${{ secrets.GIST_ID }}" | ."github-token" = "${{ secrets.GH_PAT }}"' config/config.yaml
+
+      - name: Update subs
+        run: |
+          docker run -d \
+            --name subs-check-pro \
+            -p 8299:8299 \
+            -p 8199:8199 \
+            -v ./config:/app/config \
+            -v ./output:/app/output \
+            ghcr.io/sinspired/subs-check-pro:latest || true
+
+      - name: Save history
+        uses: actions/cache/save@v6
+        with:
+          path: ${{ github.workspace }}/output
+          key: history-${{ github.run_id }}
