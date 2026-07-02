@@ -21,7 +21,7 @@ progress-mode: "auto"
 # 检查间隔(分钟)
 # 建议使用 cron-expression 表达式，# 每两天的凌晨 4 点执行
 # 高峰期检测意义真的不大，节点少，而且不稳定
-check-interval: 100000
+check-interval: 0
 
 # -----------检测参数-----------
 # 流水线任务并发数
