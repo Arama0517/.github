@@ -1,2 +1,2 @@
 #!/bin/sh
-kill -9 $(pgrep -f subs-check) 2>/dev/null
+kill -9 $(pgrep -f subs-check-pro) 2>/dev/null

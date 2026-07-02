@@ -4,7 +4,7 @@ print-progress: true
 # 进度条显示模式:
 # "auto": 根据测活-测速-媒体检测的阶段权重自动显示
 # "stage": 每个阶段完成,显示下一阶段剩余任务
-progress-mode: "auto"
+progress-mode: "stage"
 
 # -----------计划任务-----------
 # 支持标准cron表达式，如：
@@ -65,7 +65,7 @@ keep-success-proxies: true
 # 注意: 节点可能被测速测死(暂时或永久), 经过多次测试, 不用怀疑!
 # 强烈建议设置较低的 min-speed, 强烈建议保留 download-timeout 和 download-mb
 # 最低测速结果舍弃(KB/s)
-min-speed: 128
+min-speed: 512
 # 下载测试时间(s)(与下载链接大小相关，默认最大测试10s)
 download-timeout: 10
 # 单节点测速下载数据大小(MB)限制，0为不限
