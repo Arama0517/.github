@@ -284,7 +284,7 @@ callback-script: "./config/callback.sh"
 # 填写搭建的apprise API server 地址
 # 示例：https://notify.xxxx.us.kg/notify
 # 内置apprise服务，不想搭建仅需填写 recipient-url 即可
-apprise-api-server: "https://apprise.linkpc.dpdns.org/notify"
+# apprise-api-server: "https://apprise.linkpc.dpdns.org/notify"
 # 通知渠道
 # 支持100+ 个通知渠道，详细格式请参照 https://github.com/caronc/apprise
 # 格式参考：
@@ -294,15 +294,15 @@ apprise-api-server: "https://apprise.linkpc.dpdns.org/notify"
 # 邮箱授权码：设置-账号-POP3/IMAP/SMTP/Exchange/CardDAV/CalDAV服务-开通-继续获取授权码
 # 访问 https://sinspired.github.io/apprise_vercel 查看设置 3分钟搞定通知渠道 教程
 # 访问 https://apprise.linkpc.dpdns.org 测试通知渠道是否正确
-recipient-url:
-  # - "bark://api.day.app/xxxxxxxxxxxxxxx"
-  # - "ntfy://mytopic"
-  # - "tgram://xxxxxx/-1002149239223"
-  # - "dingtalk://xxxxxx@xxxxxxx"
-  # - "mailto://xxxxx:xxxxxx@qq.com"
+# recipient-url:
+# - "bark://api.day.app/xxxxxxxxxxxxxxx"
+# - "ntfy://mytopic"
+# - "tgram://xxxxxx/-1002149239223"
+# - "dingtalk://xxxxxx@xxxxxxx"
+# - "mailto://xxxxx:xxxxxx@qq.com"
 
 # 自定义通知标题
-notify-title: "🔔 节点状态更新"
+# notify-title: "🔔 节点状态更新"
 
 # -----------存储参数-----------
 # 输出目录
@@ -448,17 +448,17 @@ sub-urls:
   # - "https://example.com/sub.txt#我是备注"
   - "https://anaer.github.io/Sub/proxies.yaml"
   - "https://free.datiya.com/uploads/{Ymd}-clash.yaml"
-  - "https://node.freeclashnode.com/uploads/{Y}/{m}/0-{Ymd}.yaml"
-  - "https://node.freeclashnode.com/uploads/{Y}/{m}/1-{Ymd}.yaml"
-  - "https://node.freeclashnode.com/uploads/{Y}/{m}/2-{Ymd}.yaml"
-  - "https://node.freeclashnode.com/uploads/{Y}/{m}/3-{Ymd}.yaml"
-  - "https://node.freeclashnode.com/uploads/{Y}/{m}/4-{Ymd}.yaml"
-  - "https://node.freeclashnode.com/uploads/{Y}/{m}/0-{Ymd}.txt"
-  - "https://node.freeclashnode.com/uploads/{Y}/{m}/1-{Ymd}.txt"
-  - "https://node.freeclashnode.com/uploads/{Y}/{m}/2-{Ymd}.txt"
-  - "https://node.freeclashnode.com/uploads/{Y}/{m}/3-{Ymd}.txt"
-  - "https://node.freeclashnode.com/uploads/{Y}/{m}/4-{Ymd}.txt"
-  - "http://127.0.0.1:25500/sub?target=clashr&url=https://node.freeclashnode.com/uploads/{Y}/{m}/{Ymd}.json"
+  - "https://node.freeclashnode.com/uploads/{Y}/{mm}/0-{Ymd}.yaml"
+  - "https://node.freeclashnode.com/uploads/{Y}/{mm}/1-{Ymd}.yaml"
+  - "https://node.freeclashnode.com/uploads/{Y}/{mm}/2-{Ymd}.yaml"
+  - "https://node.freeclashnode.com/uploads/{Y}/{mm}/3-{Ymd}.yaml"
+  - "https://node.freeclashnode.com/uploads/{Y}/{mm}/4-{Ymd}.yaml"
+  - "https://node.freeclashnode.com/uploads/{Y}/{mm}/0-{Ymd}.txt"
+  - "https://node.freeclashnode.com/uploads/{Y}/{mm}/1-{Ymd}.txt"
+  - "https://node.freeclashnode.com/uploads/{Y}/{mm}/2-{Ymd}.txt"
+  - "https://node.freeclashnode.com/uploads/{Y}/{mm}/3-{Ymd}.txt"
+  - "https://node.freeclashnode.com/uploads/{Y}/{mm}/4-{Ymd}.txt"
+  - "http://127.0.0.1:25500/sub?target=clashr&url=https://node.freeclashnode.com/uploads/{Y}/{mm}/{Ymd}.json"
   - "https://raw.githubusercontent.com/free-nodes/v2rayfree/main/v{Ymd}1"
   - "https://raw.githubusercontent.com/free-nodes/v2rayfree/main/v{Ymd}2"
   - "https://raw.githubusercontent.com/free-nodes/clashfree/main/clash{Ymd}.yml"
@@ -662,3 +662,4 @@ sub-urls:
   - "https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/ss.txt"
   - "https://raw.githubusercontent.com/hamedcode/port-based-v2ray-configs/main/sub/other.txt"
   - "https://raw.githubusercontent.com/xiaoji235/airport-free/refs/heads/main/v2ray.txt"
+  - "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml"
