@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       subconverter:
-        image: asdlokj1qpi23/subconverter:latest@sha256:823afacc2a9a9387411c89bb555ae526cfdcf80d7305f3b48bec7f007c28a6b8
+        image: asdlokj1qpi23/subconverter:latest@sha256:3e4f48f6ac831cd9882a943eb31435d84499d87b991d7770939e26e6e5803719
         ports:
           - 25500:25500
     steps:
