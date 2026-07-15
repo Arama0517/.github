@@ -1,0 +1,20 @@
+name: Sync to Gitee
+
+on:
+  workflow_dispatch:
+
+jobs:
+  sync:
+    name: Sync to Gitee
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync
+        uses: Yikun/hub-mirror-action@v1.5
+        with:
+          src: github/Arama0517
+          dst: gitee/arama0517
+          dst_key: ${{ secrets.GITEE_KEY }}
+          dst_token: ${{ secrets.GITEE_TOKEN }}
+          static_list: "scoop-bucket,scoop-url-switcher"
+          account_type: user
+          force_update: true
