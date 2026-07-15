@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync
-        uses: Yikun/hub-mirror-action@v1.5
+        uses: Yikun/hub-mirror-action@ec47170fa9d126a4bee5a1ab9359845bb1395248 # v1.5
         with:
           src: github/Arama0517
           dst: gitee/arama0517
