@@ -17,19 +17,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-
-      - name: Restore history
-        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
-          path: ${{ github.workspace }}/output
-          key: history
-          restore-keys: |
-            history
-
-      - name: Replace gist id and token
-        uses: mikefarah/yq@1b9b4ac5187171d2e5e3129be0cfa827c7f9d53d # v4.53.3
-        with:
-          cmd: yq -i '."github-gist-id" = "${{ secrets.GIST_ID }}" | ."github-token" = "${{ secrets.GH_PAT }}"' config/config.yaml
+          ref: subs
 
       - name: Update subs
         run: |
@@ -42,8 +31,13 @@ jobs:
             ghcr.io/sinspired/subs-check-pro:latest || true
           sudo chown -R $(id -u):$(id -g) ./output
 
-      - name: Save history
-        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: ${{ github.workspace }}/output
-          key: history-${{ github.run_id }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          publish_branch: subs
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          force_orphan: true
+          enable_jekyll: true
