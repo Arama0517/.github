@@ -173,7 +173,7 @@ mihomo-overwrite-url: "http://127.0.0.1:8199/sub/ACL4SSR_Online_Full.yaml"
 
 # 保存方法
 # 目前支持的保存方法: r2, local, gist, webdav, s3
-save-method: local
+save-method: gist
 
 # webdav
 webdav-url: "https://example.com/dav/"
