@@ -8,7 +8,7 @@ jobs:
     name: Update subs
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
     services:
       subconverter:
         image: asdlokj1qpi23/subconverter:latest@sha256:3e4f48f6ac831cd9882a943eb31435d84499d87b991d7770939e26e6e5803719
