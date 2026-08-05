@@ -38,7 +38,7 @@ jobs:
             --init \
             --network host \
             -v ./config:/app/config \
-            -v ./subs:/app/output \
+            -v ./output:/app/output \
             ghcr.io/beck-8/subs-check:latest || true
           sudo chown -R $(id -u):$(id -g) ./output
 
