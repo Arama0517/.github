@@ -163,10 +163,10 @@ sub-process:
   sub-info: false # 注入订阅流量信息节点
 
   # true=保留匹配节点（白名单），false=丢弃匹配节点（黑名单）
-  regex-filter-keep: false
+  regex-filter-keep: true
   # 正则筛选表达式列表
   regex-filter:
-    - "((?:[5-9][0-9]|100)%|^(?!.*GPT).*$|YT-CN)"
+    - "^(?=.*\\|[0-4]?[0-9]%)(?=.*(?:GPT⁺|GPT))(?=.*\\bYT\\b(?!-CN)).*$"
 
   # 正则排序表达式列表，按照匹配顺序排序
   # 正则过滤，国家、协议过滤等操作，请进入 WebUI，点 “订阅管理”操作
@@ -226,7 +226,7 @@ node-type:
 
 # 只测试指定位置的节点
 node-loc:
-  # - US
+  - US
   # - SG
   # - JP
 
