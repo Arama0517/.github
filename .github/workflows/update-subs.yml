@@ -28,9 +28,8 @@ jobs:
             --network host \
             -v ./config:/app/config \
             -v ./output:/app/output \
-            ghcr.io/sinspired/subs-check-pro:latest || true
+            ghcr.io/beck-8/subs-check:latest || true
           sudo chown -R $(id -u):$(id -g) ./output
-          mkdir -p results
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
