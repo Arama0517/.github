@@ -76,18 +76,17 @@ filter:
   # - "台湾|TW|Taiwan"           # 保留台湾节点
   #
   # === 按 IP 风险过滤（需开启 media-check 和 iprisk）===
-  # - "\\|[0-4]?[0-9]%"          # 保留 IP 风险 < 50% 的节点
+  - "\\|[0-4]?[0-9]%"          # 保留 IP 风险 < 50% 的节点
   # - "\\|[0-9]%\\|"             # 保留 IP 风险 < 10% 的节点（个位数）
   #
   # === 按平台解锁过滤（需开启 media-check）===
-  # - "GPT⁺|GPT"                 # 保留解锁 OpenAI 的节点
+  - "GPT⁺|GPT"                 # 保留解锁 OpenAI 的节点
   # - "NF"                       # 保留解锁 Netflix 的节点（NF=仅自制剧, NF-US=全解锁）
   # - "GM"                       # 保留解锁 Gemini 的节点
   # - "D\\+"                     # 保留解锁 Disney+ 的节点（D+=解锁但未知地区, D+-US=解锁并知道地区）
   # - "YT-"                      # 保留解锁 YouTube Premium 的节点
   # - "CL-"                      # 保留解锁 Claude 的节点
   # - "SP-"                      # 保留解锁 Spotify 的节点
-  - '\\|[0-4]?[0-9]%.*(?:GPT⁺|GPT)'
 
 # 是否开启流媒体检测，其中IP欺诈依赖重命名
 media-check: true
