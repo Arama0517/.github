@@ -39,7 +39,7 @@ jobs:
             --network host \
             -v ./config:/app/config \
             -v ./output:/app/output \
-            ghcr.io/beck-8/subs-check:latest || true
+            ghcr.io/sinspired/subs-check-pro:latest || true
           sudo chown -R $(id -u):$(id -g) ./output
 
       - name: Save history
