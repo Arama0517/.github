@@ -65,7 +65,7 @@ keep-success-proxies: true
 # 注意: 节点可能被测速测死(暂时或永久), 经过多次测试, 不用怀疑!
 # 强烈建议设置较低的 min-speed, 强烈建议保留 download-timeout 和 download-mb
 # 最低测速结果舍弃(KB/s)
-min-speed: 6400
+min-speed: 5120
 # 下载测试时间(s)(与下载链接大小相关，默认最大测试10s)
 download-timeout: 10
 # 单节点测速下载数据大小(MB)限制，0为不限
@@ -227,9 +227,9 @@ node-type:
 # 只测试指定位置的节点
 node-loc:
   # - US
-  - SG
-  - JP
-  - HK
+  # - SG
+  # - JP
+  # - HK
 
 
 # 是否丢弃无法访问 cloudflare 的节点(可正常访问Google等,默认保留,修改会导致可用节点急剧减少,且有大概率误杀)
