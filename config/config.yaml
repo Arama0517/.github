@@ -228,7 +228,9 @@ node-type:
 node-loc:
   # - US
   - SG
-  # - JP
+  - JP
+  - HK
+
 
 # 是否丢弃无法访问 cloudflare 的节点(可正常访问Google等,默认保留,修改会导致可用节点急剧减少,且有大概率误杀)
 # true: 丢弃
