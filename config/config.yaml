@@ -226,6 +226,7 @@ node-type:
 
 # 只测试指定位置的节点
 node-loc:
+  - HK
   # - US
   # - SG
   # - JP
